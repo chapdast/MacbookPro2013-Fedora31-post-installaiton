@@ -22,7 +22,7 @@ For wifi I just used this:
 
 https://www.cyberciti.biz/faq/fedora-linux-install-broadcom-wl-sta-wireless-driver-for-bcm43228/
 
-### and as a summary:
+and as a summary:
 
 * Enable RPM Fusion Repo
 
@@ -51,7 +51,7 @@ For FanControl I used this
 
 https://github.com/linux-on-mac/mbpfan
 
-### and as summary:
+and as summary:
 * check that you have 'coretemp' and 'applesmc' kernel modules 
 ```
 lsmod | grep -e applesmc -e coretemp
