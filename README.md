@@ -102,9 +102,9 @@ and now cpu usage is normal no to much fan spin up no heating.
 
 ## Some Other kernel Modules
 I used this 
-```
+
 https://gist.github.com/roadrunner2/1289542a748d9a104e7baec6a92f9cd7
-```
+
 and that helps with boosting and temp.
 just follow the part about keyboard and trackpad, in that part, you will build some drivers and use them.
 ```
