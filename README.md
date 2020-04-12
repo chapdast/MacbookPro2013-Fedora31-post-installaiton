@@ -106,7 +106,7 @@ I used this
 https://gist.github.com/roadrunner2/1289542a748d9a104e7baec6a92f9cd7
 
 and that helps with boosting and temp.
-just follow the part about keyboard and trackpad, in that part, you will build some drivers and use them.
+just follow the part about **keyboard and trackpad**, in that part, you will build some drivers and use them.
 ```
 sudo modprobe intel_lpss_pci spi_pxa2xx_platform applespi apple-ib-tb
 ```
