@@ -1,10 +1,10 @@
 # Install Fedora 31 On Macbook Pro 2013 Notes
 
-I Used Windows, Linux, and for last year macOS.
-from All of this I still like and want to use linux for some reasons including 
-same development and deploment enviroment for my work.
+I used Windows, Linux, and for last year macOS.
+From All of this I still like and want to use linux for some reasons including 
+same development and deployment enviroment for my work.
 
-This is my third or fouth try installing linux on my macbook pro 2013 that is my daily driver for work and programming.
+This is my fourth attempt to install linux on this macbook pro 2013 that is my daily driver for work and programming jobs I do.
 
 Installing linux on macbook pro this age is like installing linux on any other sort of laptop computer, but post installation steps are a little too much.
 
@@ -19,11 +19,13 @@ Here are some help from over the internet to fix these issues and I just listing
 
 ## Fixing WiFi
 For wifi I just used this:
-```
+
 https://www.cyberciti.biz/faq/fedora-linux-install-broadcom-wl-sta-wireless-driver-for-bcm43228/
-```
-and as a summery:
+
+### and as a summary:
+
 * Enable RPM Fusion Repo
+
 ```
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
@@ -40,13 +42,16 @@ sudo dnf install kmod-wl
 
 for more info check that link above
 
+
+
 ## Fan Control and Speed
 The problem I have with fan is it won't speed up to cool down CPU and I worried that may way for serious problems later on. For CPU Fan speed control I used 'mbpfan', it has fairly simple and straight forward installation and configuration.
 
-```
+For FanControl I used this
+
 https://github.com/linux-on-mac/mbpfan
-```
-and as summery :
+
+### and as summary:
 * check that you have 'coretemp' and 'applesmc' kernel modules 
 ```
 lsmod | grep -e applesmc -e coretemp
@@ -80,7 +85,8 @@ for more info check that link above
 
 My problem on this vga adapter was that fedora some how did not use it as a vga and handle all load through CPU it self. That mostly ends in more cpu usage and fan spin up quite any time even web browsing so I got to this config file.
 I end up with this.
-* create 20-intel-iris.config ```/etx/X11/xorg.conf.d/```
+* create 20-intel-iris.config file in ```/etc/X11/xorg.conf.d/``` directory.
+
 * Added this Config in 20-intel-iris.conf
 ```
 Section "Device"
@@ -92,4 +98,15 @@ EndSection
 ```
 * Reboot
 
-and now cpu usage is normal no fan spin up no heating.
+and now cpu usage is normal no to much fan spin up no heating.
+
+## Some Other kernel Modules
+I used this 
+```
+https://gist.github.com/roadrunner2/1289542a748d9a104e7baec6a92f9cd7
+```
+and that helps with boosting and temp.
+just follow the part about keyboard and trackpad, in that part, you will build some drivers and use them.
+```
+sudo modprobe intel_lpss_pci spi_pxa2xx_platform applespi apple-ib-tb
+```
